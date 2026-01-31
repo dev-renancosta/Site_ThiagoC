@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thiago Chaklian - Atleta de Alta Performance. Viver a rotina de campeão.">
+  <title>THIAGO CHAKLIAN | Alta Performance</title>
+
+  <meta property="og:title" content="THIAGO CHAKLIAN | Alta Performance">
+  <meta property="og:description" content="Thiago Chaklian - Atleta de Alta Performance.">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1500&auto=format&fit=crop">
+  <meta property="og:type" content="website">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Syncopate:wght@400;700&family=Teko:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+</head>
+
+<body>
+  <div id="canvas-container"></div>
+
+  <div class="overlay">
+    <div class="status-bar">
+      <div class="live-indicator">
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div class="hero-logo">
+        <h1 class="title-main">THIAGO</h1>
+        <span class="title-script">Chaklian</span>
+        <p class="subtitle">Atleta de Alta Performance</p>
+      </div>
+
+      <nav class="nav-buttons">
+        <a href="https://wa.me/5548988213506?text=Quero%20agendar%20minha%20call%20e%20virar%20meu%20jogo%20em%202026!"
+          target="_blank" rel="noopener noreferrer" class="btn group">
+          <div class="btn-bg"></div>
+          <div class="btn-content">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+              </svg>
+            </div>
+            <span class="btn-text">VIVER A ROTINA DE CAMPEÃO</span>
+          </div>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+
+        <a href="https://www.mercadolivre.com.br/social/sath7322464" target="_blank" rel="noopener noreferrer"
+          class="btn group">
+          <div class="btn-bg"></div>
+          <div class="btn-content">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                <path d="M3 6h18" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            </div>
+            <span class="btn-text">EQUIPAMENTOS DE GRAVAÇÃO</span>
+          </div>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+
+        <a href="https://wa.link/tu8xvb" target="_blank" rel="noopener noreferrer" class="btn group">
+          <div class="btn-bg"></div>
+          <div class="btn-content">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                <path d="M15 18H9" />
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                <circle cx="17" cy="18" r="2" />
+                <circle cx="7" cy="18" r="2" />
+              </svg>
+            </div>
+            <span class="btn-text">Fornecedor</span>
+          </div>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </nav>
+
+      <p class="footer-text">
+        COPYRIGHT THIAGO CHAKLIAN &copy; 2026 - DESENVOLVIDO POR RC
+      </p>
+    </main>
+
+    <div class="spacer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
