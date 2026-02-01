@@ -1,122 +1,219 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Thiago Chaklian - Atleta de Alta Performance. Viver a rotina de campeão.">
-  <title>THIAGO CHAKLIAN | Alta Performance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thiago Chaklian - Elite Performance, Gestão de Perfil e Audiovisual. Links oficiais.">
+    <title>Thiago Chaklian</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050505'/><text x='50' y='65' font-family='Arial, sans-serif' font-weight='bold' font-size='50' text-anchor='middle' fill='%23ff3131'>TC</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Dancing+Script:wght@700&family=Montserrat:wght@800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand-red: #ff3131;
+            --brand-dark: #050505;
+            --accent-glow: rgba(255, 49, 49, 0.12);
+        }
 
-  <meta property="og:title" content="THIAGO CHAKLIAN | Alta Performance">
-  <meta property="og:description" content="Thiago Chaklian - Atleta de Alta Performance.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1500&auto=format&fit=crop">
-  <meta property="og:type" content="website">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Syncopate:wght@400;700&family=Teko:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+        body {
+            background: linear-gradient(135deg, #1c1c1c 0%, #3a0000 100%);
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+        .logo-container {
+            perspective: 1000px;
+        }
+
+        .title-thiago {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -2px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+        }
+
+        .logo-container:hover .title-thiago {
+            letter-spacing: 8px;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .name-chaklian {
+            font-family: 'Dancing Script', cursive;
+            color: var(--brand-red);
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            font-size: 2.5rem;
+            transform: rotate(-5deg);
+            transition: all 0.4s ease;
+            pointer-events: none;
+            text-shadow: 0 4px 15px rgba(255, 49, 49, 0.4);
+        }
+
+        .logo-container:hover .name-chaklian {
+            transform: rotate(0deg) scale(1.1);
+            filter: drop-shadow(0 0 15px var(--brand-red));
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.05),
+                    transparent);
+            transition: 0.6s;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--brand-red);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
 </head>
 
-<body>
-  <div id="canvas-container"></div>
+<body class="flex flex-col items-center px-6 py-12">
 
-  <div class="overlay">
-    <div class="status-bar">
-      <div class="live-indicator">
-        <span class="dot"></span>
-      </div>
-    </div>
+    <header class="relative mb-12 mt-10 cursor-default animate-fade-up flex flex-col items-center">
+        <div class="logo-container relative">
+            <h1 class="title-thiago text-6xl md:text-8xl font-black text-white leading-none">
+                THIAGO
+            </h1>
+            <span class="name-chaklian">Chaklian</span>
+        </div>
+        <p class="text-gray-400 text-xs md:text-sm mt-6 tracking-[0.3em] font-light uppercase text-center opacity-80">
+            Estratégia e Performance para quem joga alto
+        </p>
+    </header>
 
-    <main class="main-content">
-      <div class="hero-logo">
-        <h1 class="title-main">THIAGO</h1>
-        <span class="title-script">Chaklian</span>
-        <p class="subtitle">Atleta de Alta Performance</p>
-      </div>
+    <main class="w-full max-w-md flex flex-col gap-5 z-10">
 
-      <nav class="nav-buttons">
         <a href="https://wa.me/5548988213506?text=Quero%20agendar%20minha%20call%20e%20virar%20meu%20jogo%20em%202026!"
-          target="_blank" rel="noopener noreferrer" class="btn group">
-          <div class="btn-bg"></div>
-          <div class="btn-content">
-            <div class="icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-              </svg>
-            </div>
-            <span class="btn-text">VIVER A ROTINA DE CAMPEÃO</span>
-          </div>
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
+            target="_blank" rel="noopener noreferrer"
+            class="link-card animate-fade-up delay-1 p-4 h-28 rounded-3xl flex flex-col justify-center items-center text-center group border-red-500/30 shadow-[0_0_20px_rgba(255,49,49,0.15)] hover:border-red-500 hover:shadow-[0_0_30px_rgba(255,49,49,0.3)]">
+            <span
+                class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-2 group-hover:text-red-500 transition-colors">Performance
+                & Estratégia</span>
+            <span
+                class="text-lg font-bold tracking-widest uppercase group-hover:scale-105 transition-transform leading-tight">
+                ROTINA DE CAMPEÃO
+            </span>
         </a>
 
         <a href="https://www.mercadolivre.com.br/social/sath7322464" target="_blank" rel="noopener noreferrer"
-          class="btn group">
-          <div class="btn-bg"></div>
-          <div class="btn-content">
-            <div class="icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                <path d="M3 6h18" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
-              </svg>
-            </div>
-            <span class="btn-text">EQUIPAMENTOS DE GRAVAÇÃO</span>
-          </div>
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
+            class="link-card animate-fade-up delay-2 p-4 h-28 rounded-3xl flex flex-col justify-center items-center text-center group">
+            <span
+                class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-2 group-hover:text-red-500 transition-colors">Audiovisual
+                de Elite</span>
+            <span class="text-lg font-bold tracking-widest uppercase">EQUIPAMENTOS DE GRAVAÇÃO</span>
         </a>
 
-        <a href="https://wa.link/tu8xvb" target="_blank" rel="noopener noreferrer" class="btn group">
-          <div class="btn-bg"></div>
-          <div class="btn-content">
-            <div class="icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
-                <path d="M15 18H9" />
-                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
-                <circle cx="17" cy="18" r="2" />
-                <circle cx="7" cy="18" r="2" />
-              </svg>
-            </div>
-            <span class="btn-text">Fornecedor</span>
-          </div>
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
+        <a href="https://wa.link/tu8xvb" target="_blank" rel="noopener noreferrer"
+            class="link-card animate-fade-up delay-3 p-4 h-28 rounded-3xl flex flex-col justify-center items-center text-center group">
+            <span
+                class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-2 group-hover:text-red-500 transition-colors">Melhores
+                produtos</span>
+            <span class="text-lg font-bold tracking-widest uppercase">FORNECEDOR ELITE</span>
         </a>
-      </nav>
 
-      <p class="footer-text">
-        COPYRIGHT THIAGO CHAKLIAN &copy; 2026 - DESENVOLVIDO POR RC
-      </p>
     </main>
 
-    <div class="spacer"></div>
-  </div>
+    <footer class="mt-auto pt-20 animate-fade-up delay-3 flex flex-col items-center gap-8 z-10">
+        <div class="flex gap-12 opacity-80">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/thiagochaklian?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                class="hover:text-red-500 hover:opacity-100 transition-all transform hover:scale-125">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 1.166.054 1.8.249 2.223.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.223.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.165-.249 1.8-.413 2.223-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.223.413-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.166-.054-1.8-.249-2.223-.415-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.223-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.165.249-1.8.415-2.223.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.223-.413 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.277.057-2.148.258-2.911.556-.789.308-1.459.72-2.126 1.387-.667.667-1.079 1.337-1.387 2.126-.298.763-.499 1.634-.556 2.911-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.057 1.277.258 2.148.556 2.911.308.789.72 1.459 1.387 2.126.667.667 1.337 1.079 2.126 1.387.763.298 1.634.499 2.911.556 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.277-.057 2.148-.258 2.911-.556.789-.308 1.459-.72 2.126-1.387.667-.667 1.079-1.337 1.387-2.126-.298-.763-.499-1.634-.556-2.911-.058-1.28-.072-1.688-.072-4.947s-.014-3.667-.072-4.947c-.057-1.277-.258-2.148-.556-2.911-.308-.789-.72-1.459-1.387-2.126-.667-.667-1.337-1.079-2.126-1.387-.763-.298-1.634-.499-2.911-.556-1.28-.058-1.688-.072-4.947-.072z" />
+                </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                class="hover:text-red-500 hover:opacity-100 transition-all transform hover:scale-125">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                class="hover:text-red-500 hover:opacity-100 transition-all transform hover:scale-125">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z" />
+                </svg>
+            </a>
+        </div>
+        <p class="text-xs uppercase tracking-[0.2em] text-white opacity-90">© 2024 Thiago Chaklian • Elite Performance
+        </p>
+        <p class="text-[10px] uppercase tracking-[0.1em] text-gray-500 mt-[-1rem]">Desenvolvido por RC</p>
+    </footer>
 
-  <script src="script.js"></script>
 </body>
 
 </html>
