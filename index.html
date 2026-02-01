@@ -80,33 +80,6 @@
             );
         }
 
-        /* Glass Bar Style - Mobile Only */
-        .barra-glass {
-            display: none;
-            /* Hidden by default on desktop */
-        }
-
-        @media (max-width: 768px) {
-            .barra-glass {
-                display: block;
-                background: rgba(0, 0, 0, 0.3);
-                /* Semi-transparent black */
-                backdrop-filter: blur(10px);
-                /* The Blur Secret */
-                -webkit-backdrop-filter: blur(10px);
-                /* Safari support */
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 60px;
-                z-index: 1000;
-                padding-top: env(safe-area-inset-top);
-                /* Handle notch */
-            }
-        }
-
         body {
             /* background removed from here - transparent to show fixed gradient */
             background-color: transparent;
@@ -224,7 +197,6 @@
 <body class="flex flex-col items-center px-6 py-12">
     <div class="fusao-perfeita"></div>
     <div class="bg-fixed"></div>
-    <div class="barra-glass"></div>
 
     <header class="relative mb-12 mt-10 cursor-default animate-fade-up flex flex-col items-center">
         <div class="logo-container relative">
@@ -298,7 +270,7 @@
                 </svg>
             </a>
         </div>
-        <p class="text-xs uppercase tracking-[0.2em] text-white opacity-90">© 2024 Thiago Chaklian • Elite Performance
+        <p class="text-xs uppercase tracking-[0.2em] text-white opacity-90">© 2024 Thiago Chaklian • X-Source Assessoria
         </p>
         <p class="text-[10px] uppercase tracking-[0.1em] text-gray-500 mt-[-1rem]">Desenvolvido por RC</p>
     </footer>
