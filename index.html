@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#1c1c1c">
+    <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description"
@@ -35,8 +35,8 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #1c1c1c;
-            /* Fallback for overscroll */
+            background-color: #000000;
+            /* Fallback for overscroll - preto para fundir com barras do Safari */
             overflow-x: hidden;
         }
 
@@ -60,6 +60,24 @@
             z-index: -50;
             background: linear-gradient(135deg, #1c1c1c 0%, #500000 100%);
             pointer-events: none;
+        }
+
+        /* Fade to Black: máscara nas bordas para fundir com as barras do Safari (iPhone) */
+        .fusao-perfeita {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: linear-gradient(
+                to bottom,
+                #000000 0%,
+                rgba(0,0,0,0) 15%,
+                rgba(0,0,0,0) 85%,
+                #000000 100%
+            );
         }
 
         /* Glass Bar Style - Mobile Only */
@@ -95,7 +113,7 @@
             color: white;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            min-height: 100vh;
+            min-height: 100dvh;
             position: relative;
 
             /* Safe Areas for iPhone Notch/Home Bar */
@@ -204,6 +222,7 @@
 </head>
 
 <body class="flex flex-col items-center px-6 py-12">
+    <div class="fusao-perfeita"></div>
     <div class="bg-fixed"></div>
     <div class="barra-glass"></div>
 
