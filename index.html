@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description"
         content="Thiago Chaklian - Elite Performance, Gestão de Perfil e Audiovisual. Links oficiais.">
     <title>Thiago Chaklian</title>
@@ -27,12 +27,24 @@
             box-sizing: border-box;
         }
 
-        html,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            /* Fallback for overscroll */
+            overflow-x: hidden;
+        }
+
         body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+            background-color: transparent;
+            /* Transparent so fixed div shows */
+            overflow-x: hidden;
         }
 
         /* Background fixed via separate element */
