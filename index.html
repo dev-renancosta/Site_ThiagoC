@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1c1c1c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description"
@@ -89,13 +90,17 @@
         }
 
         body {
-            /* background removed from here */
+            /* background removed from here - transparent to show fixed gradient */
+            background-color: transparent;
             color: white;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
-            /* Ensure z-index works for children */
+
+            /* Safe Areas for iPhone Notch/Home Bar */
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
         }
 
         .logo-container {
